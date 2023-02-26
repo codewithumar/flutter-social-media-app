@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tech_media/res/color.dart';
+import 'package:tech_media/res/fonts.dart';
+import 'package:tech_media/res/themedata.dart';
 import 'package:tech_media/utils/routes/route_name.dart';
 import 'package:tech_media/utils/routes/routes.dart';
-import 'package:tech_media/view/splash/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -16,13 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const SplashScreen(),
+      theme:CustomTheme.lighttheme,
       initialRoute: RouteName.splashScreen,
       onGenerateRoute: Routes.generateRoute,
     );
   }
 }
-
